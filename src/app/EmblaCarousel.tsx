@@ -91,8 +91,11 @@ export function EmblaCarousel() {
     <div className='embla mt-5 mx-auto flex flex-col items-center justify-center max-w-6xl'>
       <div className='embla__viewport' ref={emblaRef}>
         <div className='embla__container flex gap-x-16'>
-          {images.map((image) => (
-            <div className='embla__slide embla__class-names flex flex-col max-w-fit'>
+          {images.map((image, index) => (
+            <div
+              className='embla__slide embla__class-names flex flex-col max-w-fit'
+              key={index}
+            >
               <img
                 className='embla__slide__img object-contain'
                 src={image.path}
