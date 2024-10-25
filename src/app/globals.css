@@ -2,20 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
+  --ff-primary: "Homemade Apple", serif;
   --background: #ffffff;
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--ff-primary);
+  background-color: #dedede;
+  /* overflow-y: hidden; */
+}
+
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+  align-items: flex-start;
+  transition: height 0.2s;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  transition: opacity 2s ease;
+}
+
+.embla__slide:not(.is-snapped) {
+  opacity: 0.1;
+}
+
+.embla__slide:not(.is-snapped) p {
+  opacity: 0;
+}
+
+.embla__slide p {
+  opacity: 1;
+  transition: opacity 2.2s ease;
 }
