@@ -26,7 +26,6 @@ body {
   background: var(--background);
   font-family: var(--ff-primary);
   background-color: #dedede;
-  /* overflow-y: hidden; */
 }
 
 .embla {
